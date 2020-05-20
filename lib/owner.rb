@@ -1,4 +1,4 @@
-require 'pry'
+
 class Owner
   attr_reader :name, :species
   @@all = []
@@ -20,12 +20,15 @@ class Owner
   def self.reset_all
     @@all.clear
   end
+  
   def say_species
     "I am a #{species}."
   end
+  
   def cats
     Cat.all.select {|cat| cat.owner == self}
   end
+  
   def dogs
     Dog.all.select {|dog| dog.owner == self}
   end
@@ -51,8 +54,6 @@ class Owner
     self.dogs.each {|x| x.mood = "nervous"}
     self.cats.each {|x| x.owner = nil}
     self.dogs.each {|x| x.owner = nil}
-    
-   
   end
   
   def list_pets
