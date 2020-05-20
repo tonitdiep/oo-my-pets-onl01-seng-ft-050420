@@ -56,8 +56,8 @@ class Owner
     self.dogs.each {|x| x.owner = nil}
   end
   
-  def list_pets
-    return ("I have #{dogs.count} dogs(s), and #{cats.count} cat(s).")
+  def list_pets(count)
+    return "I have #{dogs.count} dogs(s), and #{cats.count} cat(s)."
   end
 
 end
